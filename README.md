@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img alt="" src=".github/preview.jpg" width="100%">
+  <img alt="" src="" width="100%">
 </p>
 
 <p align="center">
@@ -13,11 +13,11 @@
 </p>
 
 <p align="center">
- <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=5822b4&labelColor=991eeb" alt="License">
+ <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=161e2f&labelColor=107770" alt="License">
  
-  <img src="https://img.shields.io/github/forks/birobirobiro/PlantManager?label=forks&message=MIT&color=5822b4&labelColor=991eeb" alt="Forks">
+  <img src="https://img.shields.io/github/forks/birobirobiro/PlantManager?label=forks&message=MIT&color=161e2f&labelColor=107770" alt="Forks">
 
-  <img src="https://img.shields.io/github/stars/birobirobiro/PlantManager?label=stars&message=MIT&color=5822b4&labelColor=991eeb " alt="Stars">
+  <img src="https://img.shields.io/github/stars/birobirobiro/PlantManager?label=stars&message=MIT&color=161e2f&labelColor=107770 " alt="Stars">
 </p>
 
 <p align="center">
