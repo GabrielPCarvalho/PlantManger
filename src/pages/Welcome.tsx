@@ -7,13 +7,20 @@ import {
     TouchableOpacity,
     Dimensions 
 } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
+
 import wateringImg from '../assets/watering.png';
 import { colors, fonts } from '../styles/';
-
 import { Feather } from '@expo/vector-icons';
 
 
 export function Welcome(){
+    const navigation = useNavigation();
+
+    function handleStart(){
+        navigation.navigate('UserIdentification');
+    }
+
     return(
         <View style={styles.container}>
             <Text style={styles.title}>
@@ -29,16 +36,17 @@ export function Welcome(){
             />
 
             <Text style={styles.subtitle}>
-            Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
-            sempre que precisar.
+                Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
+                sempre que precisar.
             </Text>
             
             <TouchableOpacity 
-            style={styles.button}
-            activeOpacity={0.7}
+                style={styles.button}
+                activeOpacity={0.7}
+                onPress={handleStart}
             >
                 <Text style={styles.buttonText}>
-                    <Feather name='chevron-right' style={styles.buttonIcon}/>
+                    <Feather name='chevron-right' style={styles.buttonIcon} />
                 </Text>
             </TouchableOpacity>
         </View>
