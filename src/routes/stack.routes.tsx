@@ -1,6 +1,11 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Welcome, UserIdentification, Confirmation } from '../pages/';
+import {
+    Welcome,
+    UserIdentification,
+    Confirmation,
+    PlantSelect
+} from '../pages/';
 
 import { colors } from '../styles';
 
@@ -8,8 +13,8 @@ const stackRoutes = createStackNavigator();
 
 const AppRoutes: React.FC = () => (
     <stackRoutes.Navigator
-        headerMode="none"
-        screenOptions={{
+    screenOptions={{
+            headerShown: false,
             cardStyle: {
                 backgroundColor: colors.white
             },
@@ -28,6 +33,11 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="Confirmation"
             component={Confirmation}
+        />
+
+        <stackRoutes.Screen
+            name="PlantSelect"
+            component={PlantSelect}
         />
         
     </stackRoutes.Navigator>

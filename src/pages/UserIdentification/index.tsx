@@ -3,14 +3,14 @@ import {
     View,
     Text,
     TextInput,
-    StyleSheet,
     TouchableWithoutFeedback,
     Keyboard
 } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
-import { Button } from '../components/Button';
+import { Button } from '../../components';
+import { styles } from './styles'
+import { colors } from '../../styles';
 
-import { fonts, colors } from '../styles';
 
 export function UserIdentification(){
     const [isFilled, setIsFilled] = useState(false);
@@ -80,45 +80,6 @@ export function UserIdentification(){
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: '100%',
-        alignItems: 'center',
-    },
-    form: {
-        flex: 1,
-        width: '100%',
-        paddingHorizontal: 70,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    title: {
-        color: colors.heading,
-        fontFamily: fonts.heading,
-        fontSize: 24,
-        lineHeight: 32,
-        textAlign: 'center',
-        marginTop: 40,
-    },
-    input: {
-        borderBottomWidth: 1,
-        borderColor: colors.gray,
-        color: colors.heading,
-        width: '100%',
-        fontSize: 18,
-        margin: 50,
-        padding: 10,
-        textAlign: 'center',
 
-    },
-    emoji: {
-        fontSize: 44,
-    },
-    footer: {
-        width: '100%',
-        paddingHorizontal: 15,
-    }
-})
 
 export default UserIdentification;
