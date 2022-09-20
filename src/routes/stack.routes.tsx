@@ -4,7 +4,8 @@ import {
     Welcome,
     UserIdentification,
     Confirmation,
-    PlantSelect
+    PlantSelect,
+    PlantSave
 } from '../pages/';
 
 import { colors } from '../styles';
@@ -38,6 +39,11 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="PlantSelect"
             component={PlantSelect}
+        />
+
+        <stackRoutes.Screen
+            name="PlantSave"
+            component={PlantSave}
         />
         
     </stackRoutes.Navigator>
