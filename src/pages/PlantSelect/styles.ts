@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
         paddingBottom: 5,
         marginTop: 16,
         marginLeft: 32,
-        marginRight: 32
+        paddingRight: 32
     },
     plants: {
         flex: 1,
