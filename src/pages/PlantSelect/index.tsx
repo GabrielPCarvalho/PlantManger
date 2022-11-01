@@ -21,6 +21,7 @@ import api from '../../services/api';
 
 import { colors } from '../../styles';
 import { styles } from './styles'
+import { ScrollView } from 'react-native-gesture-handler';
 
 interface EnviromentProps {
     key: string;
@@ -110,59 +111,63 @@ export function PlantSelect(){
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Header />
+                <View style={styles.header}>
+                    <Header />
 
-                <Text style={styles.title}>Em qual ambiente</Text>
-                <Text style={styles.subTitle}>
-                    você quer colocar sua planta?
-                </Text>
+                    <Text style={styles.title}>Em qual ambiente</Text>
+                    <Text style={styles.subTitle}>
+                        você quer colocar sua planta?
+                    </Text>
 
-            </View>
+                </View>
 
-            <View>
-                <FlatList 
-                    data={enviroments}
-                    keyExtractor={(item) => String(item.key)}
-                    renderItem={({ item }) =>(
-                        <EnviromentButton
+                <View>
+                    <FlatList 
+                        data={enviroments}
+                        keyExtractor={(item) => String(item.key)}
+                        renderItem={({ item }) =>(
+                            <EnviromentButton
                             title={item.title}
                             active={item.key === enviromentSelected}
                             onPress={() => handleEnviromentSelected(item.key)}
+                            />
+                        )}
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={styles.enviromentList}
                         />
-                    )}
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={styles.enviromentList}
-                />
-            </View>
+                </View>
 
-            <View style={styles.listCard}>
-                <FlatList
-                    data={filteredPlants}
-                    keyExtractor={(item) => String(item.id)}
-                    renderItem={({ item }) => (
-                        <PlantCardPrimary 
-                            data={item}
-                            onPress={() => handlePlantSelect(item)}
-                        />
-                    )}
+                <ScrollView
                     showsVerticalScrollIndicator={false}
-                    numColumns={2}
-                    onEndReachedThreshold={0.1}
-                    onEndReached={({ distanceFromEnd }) =>
-                        handleFetchMore(distanceFromEnd)
-                    }
-                    ListFooterComponent={
-                        loadingMore
-                        ? <ActivityIndicator color={colors.green} />
-                        : <></>
-                    }
-                />
-
-            </View>
+                    contentContainerStyle={styles.listCard}
+                >
+                    <View style={styles.listCard}>
+                        <FlatList
+                            data={filteredPlants}
+                            keyExtractor={(item) => String(item.id)}
+                            renderItem={({ item }) => (
+                                <PlantCardPrimary
+                                    data={item}
+                                    onPress={() => handlePlantSelect(item)}
+                                />
+                            )}
+                            showsVerticalScrollIndicator={false}
+                            numColumns={2}
+                            onEndReachedThreshold={0.1}
+                            onEndReached={({ distanceFromEnd }) =>
+                                handleFetchMore(distanceFromEnd)
+                            }
+                            ListFooterComponent={
+                                loadingMore
+                                ? <ActivityIndicator color={colors.green} />
+                                : <></>
+                            }
+                        />
+                    </View>
+                </ScrollView>
             
-        </View>
+            </View>
     )
 }
 

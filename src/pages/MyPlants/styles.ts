@@ -41,6 +41,10 @@ export const styles = StyleSheet.create({
         fontFamily: fonts.heading,
         color: colors.heading,
         marginVertical: 25
+    },
+
+    scroll: {
+        width: '100%',
     }
 
 });

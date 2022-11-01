@@ -5,7 +5,6 @@ import {
     UserIdentification,
     Confirmation,
     PlantSave,
-    MyPlants
 } from '../pages/';
 
 import { colors } from '../styles';

@@ -36,7 +36,6 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     listCard: {
-        marginTop: 16,
-        paddingHorizontal: 20,
+        paddingHorizontal: 12,
     }
 });
